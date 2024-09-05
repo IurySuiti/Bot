@@ -1,0 +1,29 @@
+from telegram import Bot
+from telegram.ext import Updater, CommandHandler
+
+# Substitua pelo token do seu bot e pelo ID do canal
+TOKEN = '7435548617:AAHPpPJBuOYw_OBZOaS7wlHZIyx_o-mGN78'
+CHANNEL_ID = '@IsafadinhaVendasBot'
+
+def start(update, context):
+    update.message.reply_text('Olá! Este é um canal de exemplo.')
+
+def send_message_to_channel(bot):
+    bot.send_message(chat_id=@IsafadinhaVendasBot, text='Mensagem enviada para o canal!')
+
+def main():
+    updater = Updater(7435548617:AAHPpPJBuOYw_OBZOaS7wlHZIyx_o-mGN78, use_context=True)
+    dispatcher = updater.dispatcher
+
+    dispatcher.add_handler(CommandHandler('start', start))
+
+    # Inicie o bot
+    updater.start_polling()
+
+    # Envie uma mensagem para o canal
+    send_message_to_channel(updater.bot)
+
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
